@@ -1,0 +1,137 @@
+Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          // home
+          InkWell(
+            onTap: () => setState(() {
+              currentTab = 1;
+            }),
+            splashColor: Colors.transparent,
+            child: Container(
+              padding: EdgeInsets.symmetric(vertical: setHeight(5), horizontal: setWidth(5)),
+              height: setHeight(50),
+              width: setWidth(120),
+              decoration: BoxDecoration(
+                  color: currentTab == 1
+                      ? Color(0xFF2475EE)
+                      : Colors.transparent,
+                  borderRadius: BorderRadius.circular(50)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.home_outlined, size: setHeight(32), color: currentTab == 1 ? Colors.white : Color(0xFF9A9A9A)),
+                  SizedBox(width: 5),
+                  Text(
+                    "Home",
+                    style: TextStyle(
+                        fontSize: setHeight(16),
+                        fontWeight: FontWeight.w700,
+                        color:
+                            currentTab == 1 ? Colors.white : Color(0xFF656A76)),
+                  )
+                ],
+              ),
+            ),
+          ),
+
+          // public
+          InkWell(
+            onTap: () => setState(() {
+              currentTab = 2;
+            }),
+            splashColor: Colors.transparent,
+            child: Container(
+              padding: EdgeInsets.symmetric(
+                  vertical: setHeight(5), horizontal: setWidth(5)),
+              height: setHeight(50),
+              width: setWidth(120),
+              decoration: BoxDecoration(
+                  color: currentTab == 2
+                      ? Color(0xFF3751A6)
+                      : Colors.transparent,
+                  borderRadius: BorderRadius.circular(50)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.public_rounded, size: setHeight(32), color: currentTab == 2 ? Colors.white : Color(0xFF656A76)),
+                  SizedBox(width: 5),
+                  Text(
+                    currentTab == 2 ? "Public" : "",
+                    style: TextStyle(
+                        fontSize: setHeight(16),
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white),
+                  )
+                ],
+              ),
+            ),
+          ),
+          
+          // public
+          InkWell(
+            onTap: () => setState(() {
+              currentTab = 2;
+            }),
+            splashColor: Colors.transparent,
+            child: Container(
+              padding: EdgeInsets.symmetric(
+                  vertical: setHeight(5), horizontal: setWidth(5)),
+              height: setHeight(50),
+              width: setWidth(120),
+              decoration: BoxDecoration(
+                  color: currentTab == 2
+                      ? Color(0xFF3751A6)
+                      : Colors.transparent,
+                  borderRadius: BorderRadius.circular(50)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.public_rounded, size: setHeight(32), color: currentTab == 2 ? Colors.white : Color(0xFF656A76)),
+                  SizedBox(width: 5),
+                  Text(
+                    currentTab == 2 ? "Public" : "",
+                    style: TextStyle(
+                        fontSize: setHeight(16),
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white),
+                  )
+                ],
+              ),
+            ),
+          ),
+          
+          // public
+          InkWell(
+            onTap: () => setState(() {
+              currentTab = 2;
+            }),
+            splashColor: Colors.transparent,
+            child: Container(
+              padding: EdgeInsets.symmetric(
+                  vertical: setHeight(5), horizontal: setWidth(5)),
+              height: setHeight(50),
+              width: setWidth(120),
+              decoration: BoxDecoration(
+                  color: currentTab == 2
+                      ? Color(0xFF3751A6)
+                      : Colors.transparent,
+                  borderRadius: BorderRadius.circular(50)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.public_rounded, size: setHeight(32), color: currentTab == 2 ? Colors.white : Color(0xFF656A76)),
+                  SizedBox(width: 5),
+                  Text(
+                    currentTab == 2 ? "Public" : "",
+                    style: TextStyle(
+                        fontSize: setHeight(16),
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white),
+                  )
+                ],
+              ),
+            ),
+          ),
+          ],
+      ),
+    

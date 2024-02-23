@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 var screen = PlatformDispatcher.instance.views.first.physicalSize /
     PlatformDispatcher.instance.views.first.devicePixelRatio;
 
+int currentTab = 1;
+
 double setWidth(double w) {
   double width = ((screen.width).toInt() / 430) * w;
   dynamic tw = width.toInt();

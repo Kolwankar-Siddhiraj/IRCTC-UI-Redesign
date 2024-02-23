@@ -4,6 +4,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:irctc_ui/homescreen/homepage.dart';
 import 'package:irctc_ui/utils.dart';
 import 'package:pin_input_text_field/pin_input_text_field.dart';
 import 'dart:ui';
@@ -105,9 +106,13 @@ class _VerifyPinScreenState extends State<VerifyPinScreen> {
                         });
 
                         Timer(
-                            Duration(milliseconds: 2100),
+                            Duration(milliseconds: 3000),
                             () => setState(() {
                                   isLoaderActive = false;
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => HomeScreen()));
                                 }));
                       }
                     },
