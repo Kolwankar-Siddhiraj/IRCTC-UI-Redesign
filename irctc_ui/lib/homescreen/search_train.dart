@@ -5,6 +5,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:irctc_ui/homescreen/components/train_search_filter.dart';
 import 'package:irctc_ui/homescreen/homepage.dart';
+import 'package:irctc_ui/homescreen/select_train.dart';
 import 'package:irctc_ui/utils.dart';
 import 'package:marquee/marquee.dart';
 import 'package:dotted_line/dotted_line.dart';
@@ -512,7 +513,11 @@ class _SearchTrainScreenState extends State<SearchTrainScreen> {
                                                       ? "${departureDate.day}-${departureDate.month}-${departureDate.year}"
                                                       : "Choose date",
                                                   style: TextStyle(
-                                                      color: isDepartureDateChanged ? Colors.white : Color(0xFF676767),
+                                                      color:
+                                                          isDepartureDateChanged
+                                                              ? Colors.white
+                                                              : Color(
+                                                                  0xFF676767),
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontSize: setHeight(16)),
@@ -572,8 +577,10 @@ class _SearchTrainScreenState extends State<SearchTrainScreen> {
                                                             ? "${returnDate.day}-${returnDate.month}-${returnDate.year}"
                                                             : "Choose date",
                                                         style: TextStyle(
-                                                            color: isReturnDateChanged ? Colors.white : Color(
-                                                                0xFF676767),
+                                                            color: isReturnDateChanged
+                                                                ? Colors.white
+                                                                : Color(
+                                                                    0xFF676767),
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                             fontSize:
@@ -635,6 +642,13 @@ class _SearchTrainScreenState extends State<SearchTrainScreen> {
                               // search trains button
                               SizedBox(height: setHeight(16)),
                               InkWell(
+                                onTap: () {
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              SelectTrainScreen()));
+                                },
                                 child: Container(
                                   height: setHeight(64),
                                   decoration: BoxDecoration(
