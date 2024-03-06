@@ -1,8 +1,10 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print, avoid_init_to_null
 
 import 'package:flutter/material.dart';
 import 'package:irctc_ui/homescreen/components/select_train_filters.dart';
+import 'package:irctc_ui/homescreen/components/select_train_proceed_to_book.dart';
 import 'package:irctc_ui/homescreen/components/station_name_text.dart';
+import 'package:irctc_ui/homescreen/components/train_details_card.dart';
 import 'package:irctc_ui/homescreen/search_train.dart';
 import 'package:irctc_ui/utils.dart';
 import 'package:dotted_line/dotted_line.dart';
@@ -15,9 +17,13 @@ class SelectTrainScreen extends StatefulWidget {
 }
 
 class _SelectTrainScreenState extends State<SelectTrainScreen> {
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        
       appBar: AppBar(
         backgroundColor: Color(0xFF1D1F24),
         title: Row(
@@ -70,7 +76,7 @@ class _SelectTrainScreenState extends State<SelectTrainScreen> {
             child: Column(
               children: [
                 Container(
-                  height: setHeight(70),
+                  height: setHeight(64),
                   color: Color(0xFF1D1F24),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -101,7 +107,7 @@ class _SelectTrainScreenState extends State<SelectTrainScreen> {
                 ),
                 Container(
                   color: Color(0xFF1D1F24),
-                  height: setHeight(70),
+                  height: setHeight(60),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -147,40 +153,20 @@ class _SelectTrainScreenState extends State<SelectTrainScreen> {
                 ),
 
                 // train list here
-                Flexible(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        Container(
-                          height: setHeight(100),
-                          color: Colors.amber,
-                        ),
-                        Container(
-                          height: setHeight(100),
-                          color: Colors.pink,
-                        ),
-                        Container(
-                          height: setHeight(100),
-                          color: Colors.blue,
-                        ),
-                        Container(
-                          height: setHeight(100),
-                          color: Colors.red,
-                        ),
-                        Container(
-                          height: setHeight(100),
-                          color: Colors.green,
-                        ),
-                        Container(
-                          height: setHeight(100),
-                          color: Colors.orange,
-                        ),
-                        Container(
-                          height: setHeight(100),
-                          color: Colors.purple,
-                        ),
-                      ],
-                    ),
+                Expanded(
+                  child: ListView(
+                    scrollDirection: Axis.vertical,
+                    children: [
+                      SizedBox(height: setHeight(10)),
+                      TrainDetailsCardWidget(),
+                      TrainDetailsCardWidget(),
+                      TrainDetailsCardWidget(),
+                      TrainDetailsCardWidget(),
+                      TrainDetailsCardWidget(),
+                      TrainDetailsCardWidget(),
+                      TrainDetailsCardWidget(),
+                      SizedBox(height: setHeight(16)),
+                    ],
                   ),
                 )
               ],
@@ -190,17 +176,19 @@ class _SelectTrainScreenState extends State<SelectTrainScreen> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
+              height: setHeight(45),
               foregroundDecoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
                     Colors.transparent,
                     Colors.transparent,
                     Colors.transparent,
-                    Colors.black
+                    //   Color(0xFF1D1F24)
+                    Color.fromARGB(203, 0, 0, 0)
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  stops: [0, 0.2, 0.9, 1],
+                  stops: [0, 0.1, 0, 0.999],
                 ),
               ),
             ),
@@ -208,75 +196,11 @@ class _SelectTrainScreenState extends State<SelectTrainScreen> {
         ],
       ),
 
-      bottomNavigationBar: Container(
-        height: setHeight(110),
-        color: Color(0xFF1D1F24),
-        padding: EdgeInsets.only(
-            right: setWidth(30), bottom: setHeight(14), left: setWidth(30)),
-        child: Column(
-          children: [
-            SizedBox(height: setHeight(16)),
-            Row(
-              children: [
-                Expanded(
-                    flex: 6,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          "SUR Express (134556), 3AC",
-                          style: TextStyle(
-                              color: Color(0xFF8F8F8F),
-                              fontWeight: FontWeight.bold,
-                              fontSize: setHeight(13),
-                              letterSpacing: 0),
-                        ),
-                        SizedBox(height: setHeight(10)),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.currency_rupee_rounded,
-                              color: Color(0xFF8F8F8F),
-                              size: setHeight(23),
-                            ),
-                            Text(
-                              "1999.00",
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                  //   color: Color(0xFF2475EE),
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: setHeight(23)),
-                            ),
-                          ],
-                        )
-                      ],
-                    )),
-                Expanded(
-                    flex: 5,
-                    child: Container(
-                      height: setHeight(60),
-                      decoration: BoxDecoration(
-                          color: Color(0xFF2475EE),
-                          borderRadius: BorderRadius.circular(14)),
-                      child: Center(
-                        child: Text(
-                          "Proceed to Book",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: setHeight(18),
-                              letterSpacing: 0),
-                        ),
-                      ),
-                    ))
-              ],
-            ),
-          ],
-        ),
-      ),
+      //   bottomNavigationBar: SelectTrainScreen.selectedClassType != null
+      //       ? ProceedToBookButtonWidget()
+      //       : SizedBox(),
+      bottomNavigationBar: ProceedToBookButtonWidget(),
     );
   }
+
 }

@@ -650,7 +650,7 @@ class _SearchTrainScreenState extends State<SearchTrainScreen> {
                                               SelectTrainScreen()));
                                 },
                                 child: Container(
-                                  height: setHeight(64),
+                                  height: setHeight(60),
                                   decoration: BoxDecoration(
                                       color: Color(0xFF2475EE),
                                       borderRadius: BorderRadius.circular(14)),

@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:irctc_ui/homescreen/bottom_navigatoin_bar.dart';
+import 'package:irctc_ui/homescreen/components/bottom_navigatoin_bar.dart';
 import 'package:irctc_ui/homescreen/components/other_service_card.dart';
 import 'package:irctc_ui/homescreen/components/train_service_card.dart';
 import 'package:irctc_ui/homescreen/search_train.dart';

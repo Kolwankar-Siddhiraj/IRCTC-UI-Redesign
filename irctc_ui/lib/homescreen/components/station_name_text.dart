@@ -28,7 +28,7 @@ class _StationNameTextWidgetState extends State<StationNameTextWidget> {
             widget.stationCode,
             style: TextStyle(
               color: Colors.white,
-              fontSize: setHeight(27),
+              fontSize: setHeight(25),
               fontWeight: FontWeight.w500,
             ),
           ),
