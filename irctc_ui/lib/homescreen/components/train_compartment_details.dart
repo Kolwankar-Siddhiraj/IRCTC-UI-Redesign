@@ -46,17 +46,17 @@ class _TrainCompartmentDetailsWidgetState
                 color: Color(0xFF282828),
                 thickness: 2.1,
                 height: setHeight(23)),
-            seatBlock("reserved"),
-            Divider(
-                color: Color(0xFF282828),
-                thickness: 2.1,
-                height: setHeight(23)),
             seatBlock("booked"),
             Divider(
                 color: Color(0xFF282828),
                 thickness: 2.1,
                 height: setHeight(23)),
             seatBlock("booked"),
+            Divider(
+                color: Color(0xFF282828),
+                thickness: 2.1,
+                height: setHeight(23)),
+            seatBlock("available"),
             Divider(
                 color: Color(0xFF282828),
                 thickness: 2.1,

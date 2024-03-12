@@ -39,13 +39,16 @@ class _TrainCompartmentListWidgetState
                   compartmentCard("05"),
                   compartmentCard("06"),
                   compartmentCard("07"),
+                  compartmentCard("08"),
+                  compartmentCard("09"),
+                  compartmentCard("10"),
                   SizedBox(height: setHeight(151))
                 ],
               ),
             ),
           ),
         ),
-    
+
         // gradient color top
         Align(
           alignment: Alignment.topCenter,
@@ -66,7 +69,7 @@ class _TrainCompartmentListWidgetState
             ),
           ),
         ),
-    
+
         // gradient color bottom
         Align(
           alignment: Alignment.bottomCenter,
@@ -87,7 +90,7 @@ class _TrainCompartmentListWidgetState
             ),
           ),
         ),
-    
+
         // selected compartment border
         isSelectedCompartmentActive
             ? Align(
@@ -110,8 +113,7 @@ class _TrainCompartmentListWidgetState
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(18),
                         shape: BoxShape.rectangle,
-                        border:
-                            Border.all(width: 3, color: Color(0xFF2475EE))),
+                        border: Border.all(width: 3, color: Color(0xFF2475EE))),
                   ),
                 ),
               )
